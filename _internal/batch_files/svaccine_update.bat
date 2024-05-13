@@ -1,0 +1,2 @@
+@echo off
+powershell -Command "$antivirusStatus = Get-MpComputerStatus; $lastUpdateTime = $antivirusStatus.AntivirusSignatureLastUpdated; $oneMonthAgo = (Get-Date).AddMonths(-1); if ($lastUpdateTime -gt $oneMonthAgo) { Write-Host '양호'; Write-Host \"현재 상태: 최근 업데이트 날짜 $lastUpdateTime\"; } else { Write-Host '미흡'; Write-Host \"현재 상태: Windows 백신 업데이트가 필요합니다. 최근 업데이트 날짜 $lastUpdateTime\"; Write-Host '조치 방법: 사내망 연결 → 시작 → 바이러스 및 위협 방지 열기 → 업데이트 확인'; }"

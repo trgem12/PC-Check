@@ -1,0 +1,2 @@
+@echo off
+powershell -Command "$realTimeProtection = Get-MpPreference | Select-Object -ExpandProperty DisableRealtimeMonitoring; if ($realTimeProtection -eq $false) { Write-Host '양호'; Write-Host \"현재 상태: MS Defender 백신이 실시간 감시 중 입니다.\"; } else { Write-Host '미흡'; Write-Host \"현재 상태: MS Defender 백신이 실시간 감시 중이 아닙니다.\"; Write-Host 'SKT AD를 통해 제어되는 부분으로 AD 재설치가 필요합니다.'; }"
