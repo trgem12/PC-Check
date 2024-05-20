@@ -82,7 +82,7 @@ class InterviewCheckWidget(QWidget):
             self.tableWidget.setItem(row, 1, question_item)
 
             combo = QComboBox()
-            combo.setStyleSheet("QComboBox { color: white; }")
+            combo.setStyleSheet("QComboBox { color: white; }" "QComboBox QAbstractItemView { color: white; }")
             combo.addItem("선택")  # 초기 선택 항목을 빈 문자열로 설정
             combo.addItem("양호")
             combo.addItem("미흡")
