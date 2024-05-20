@@ -156,8 +156,8 @@ class PCOptimizationWidget(QWidget):
         print('휴지통 비우는 중...')
         try:
             # Windows 휴지통 비우기 명령 실행
-            result = subprocess.run("powershell -command \"Clear-RecycleBin -Confirm:$false\"", check=True, shell=True,
-                                    stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            cmd = ["powershell", "-command", "Clear-RecycleBin -Confirm:$false"]
+            result = subprocess.run(cmd, check=True, shell=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             print('휴지통이 비워졌습니다.')
         except subprocess.SubprocessError as e:
             print(f'휴지통 비우기 오류: {e}')
