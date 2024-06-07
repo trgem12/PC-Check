@@ -31,6 +31,7 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    icon=['D:\\pythonProject\\_internal\\batch_files\\security.ico'],
 )
 coll = COLLECT(
     exe,

@@ -1,3 +1,4 @@
+import os
 import sys
 from PyQt5.QtCore import Qt, QPoint
 from PyQt5.QtGui import QPixmap, QPainter, QFont, QColor, QIcon
@@ -37,7 +38,13 @@ class MainWindow(QMainWindow):
         self.resize(1074, 518)  # 크기 조정
 
         # 기본 타이틀 바 숨기기
-        self.setWindowFlags(Qt.FramelessWindowHint)
+        # self.setWindowFlags(Qt.FramelessWindowHint)
+
+        # 아이콘 파일의 절대 경로 생성
+        icon_path = os.path.join(os.getcwd(), "_internal", "batch_files", "security.png")
+
+        # 윈도우 타이틀 바 아이콘 설정
+        self.setWindowIcon(QIcon(icon_path))
 
         # 중앙에 위치할 스택 위젯 생성
         self.stacked_widget = QStackedWidget()
@@ -103,9 +110,9 @@ class MainWindow(QMainWindow):
 
         self.menu_bar.addSeparator()  # 메뉴 항목 사이에 빈 공간 추가
 
-        self.exit_action = QAction('Exit', self)
-        self.menu_bar.addAction(self.exit_action)
-        self.exit_action.triggered.connect(self.close)
+        # self.exit_action = QAction('Exit', self)
+        # self.menu_bar.addAction(self.exit_action)
+        # self.exit_action.triggered.connect(self.close)
 
         self.home_action.triggered.connect(lambda: self.change_page(0))
         self.pc_check_action.triggered.connect(lambda: self.change_page(4))
