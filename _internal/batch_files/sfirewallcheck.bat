@@ -15,9 +15,9 @@ IF "!allGood!"=="true" (
     echo 미흡
     echo 현재 상태: !insufficientItems! 방화벽 설정이 꺼져 있습니다.
     echo 조치 방법:
-    echo 1. 시작→ 방화벽 및 네트워크 보호 → 방화벽 활성화
+    echo 1. 시작→ 방화벽 및 네트워크 보호 → 도메인,개인,공용 방화벽 활성화 상태 확인
     echo 2. 비활성화되어 있는 네트워크 클릭 →  Microsoft Defender 방화벽 켬
-    echo 3. 위 과정으로 조치가 안되는 경우 Help Desk 문의 바랍니다.
+    echo 3. 활성화 되어 있는 경우 CMD 관리자 권한 실행 → netsh advfirewall set allprofiles state on 입력 후 재점검 시행
 )
 
 
