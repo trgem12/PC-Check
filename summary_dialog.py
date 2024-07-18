@@ -44,6 +44,13 @@ class SummaryDialog(QDialog):
         completion_time.setFont(QFont('Arial', 8))
         layout.addWidget(completion_time)
 
+        # 자동진단 결과 저장 문구 추가
+        save_results_message = QLabel("자동진단 결과 저장 버튼 클릭!!")
+        save_results_message.setFont(QFont('Arial', 10))
+        save_results_message.setAlignment(Qt.AlignCenter)  # Center align the text
+        save_results_message.setStyleSheet("color: red;")  # Change the text color to red
+        layout.addWidget(save_results_message)
+
     def create_status_label(self, text, color, count):
         label = QLabel(f"{text}\n{count} 개")
         label.setStyleSheet(f"background-color: {color}; color: white; padding: 5px; border-radius: 5px;")
